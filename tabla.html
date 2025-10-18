@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Tareas Pendientes</title>
+  <link rel="stylesheet" href="datos.css">
+  <script src="idb.min.js"></script>
+</head>
+<body class="tareas">
+  <nav class="navbar">
+    <div class="logo"></div>
+    <!-- Checkbox que controla el menú -->
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="menu-icon">&#9776;</label>
+    <ul class="menu">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="tareas.html">Agregar Tareas</a></li>
+    </ul>
+  </nav>
+
+  <h1>Tareas Pendientes</h1>
+
+  <input type="text" id="buscador" placeholder="Buscar tarea" autocomplete="off">
+
+  <table id="tablaTareas">
+    <thead>
+      <tr>
+        <th>Título</th>
+        <th>Descripción</th>
+        <th>Fecha</th>
+        <th>Estado</th>
+      </tr>
+    </thead>
+    <tbody id="tablaPendientes">
+    </tbody>
+  </table>
+
+  <script src="datos.js"></script>
+</body>
+</html>

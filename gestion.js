@@ -76,7 +76,7 @@ async function pintarLista() {
 
         // Botón Borrar
         const btnBorrar = document.createElement('button');
-        btnBorrar.textContent = 'Borrar';
+        btnBorrar.textContent = 'Finalizada';
         btnBorrar.onclick = async () => {
             await borrarRegistro(t.id);
             await pintarLista();

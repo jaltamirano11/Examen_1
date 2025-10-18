@@ -1,0 +1,178 @@
+/* ==============================
+   ESTILO MINIMALISTA OSCURO PARA TABLA DE TAREAS
+============================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+}
+
+body {
+  background-color: #0f0f0f;
+  color: #e6e6e6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-top: 70px; /* espacio para navbar fijo */
+}
+
+/* ==============================
+   NAVBAR
+============================== */
+.navbar {
+  width: 100%;
+  background-color: #111;
+  border-bottom: 1px solid #2a2a2a;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  padding: 14px 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.menu-icon {
+  display: none;
+  font-size: 1.6rem;
+  color: #fff;
+  cursor: pointer;
+  user-select: none;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 35px;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: #cfcfcf;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.menu li a:hover {
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .menu {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background-color: #111;
+    border-top: 1px solid #222;
+    display: none;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  #menu-toggle:checked + .menu-icon + .menu {
+    display: flex;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+}
+
+/* ==============================
+   ENCABEZADO Y BUSCADOR
+============================== */
+h1 {
+  text-align: center;
+  margin: 30px 0 15px;
+  font-size: 2rem;
+  color: #fff;
+}
+
+#buscador {
+  display: block;
+  margin: 0 auto 25px;
+  padding: 12px 15px;
+  width: 90%;
+  max-width: 600px;
+  border-radius: 10px;
+  border: 1px solid #2b2b2b;
+  background-color: #121212;
+  color: #e6e6e6;
+  font-size: 1rem;
+}
+
+#buscador:focus {
+  border: 1px solid #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.4);
+  outline: none;
+}
+
+/* ==============================
+   TABLA DE TAREAS
+============================== */
+#tablaTareas {
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto 50px;
+  border-collapse: collapse;
+  background-color: #1c1c1c;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.03);
+}
+
+#tablaTareas thead {
+  background-color: #222222;
+}
+
+#tablaTareas th, #tablaTareas td {
+  padding: 12px 18px;
+  text-align: left;
+  border-bottom: 1px solid #2b2b2b;
+  color: #e6e6e6;
+  font-weight: 500;
+}
+
+#tablaTareas th {
+  font-size: 1rem;
+  background-color: #222;
+}
+
+#tablaTareas tbody tr:hover {
+  background-color: #2a2a2a;
+}
+
+#tablaTareas td:last-child {
+  text-align: center;
+  color: #007bff;
+  font-weight: 600;
+}
+
+/* ==============================
+   RESPONSIVE
+============================== */
+@media (max-width: 768px) {
+  #tablaTareas th, #tablaTareas td {
+    padding: 10px 12px;
+    font-size: 0.9rem;
+  }
+
+  #buscador {
+    width: 95%;
+  }
+}

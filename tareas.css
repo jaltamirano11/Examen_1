@@ -197,11 +197,12 @@ body {
   background: #007bff;
   color: #fff;
   border: none;
-  border-radius: 8px;
+  border-radius: 6px;
   padding: 6px 10px;
   cursor: pointer;
   margin-left: 5px;
   transition: background 0.2s ease;
+  font-size: 0.9rem;
 }
 
 #listaTareas li button:hover {
