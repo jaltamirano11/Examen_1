@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestión de Tareas Pendientes</title>
+  <link rel="stylesheet" href="tareas.css">
+</head>
+<body>
+    <nav class="navbar">
+    <div class="logo"></div>
+
+    <!-- Checkbox invisible que controla el menú -->
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="menu-icon">&#9776;</label>
+
+    <ul class="menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="tareas.html">Tareas</a></li>
+    </ul>
+    </nav>
+ <div class="formulario">
+  <h1>📋 Lista de Tareas</h1>
+  <br>
+  <form id="formTareas">
+    <input type="text" id="titulo" placeholder="Título de la tarea" required /><br>
+    <input type="text" id="descripcion" placeholder="Descripción (opcional)" /><br>
+    <input type="date" id="fecha" placeholder="Fecha límite" /><br>
+    <button type="submit" id="btnGuardar">➕ Agregar tarea</button>
+  </form>
+</div>
+
+<!-- NUEVO CUADRO PARA LA LISTA DE TAREAS -->
+<div class="lista-container">
+  <ul id="listaTareas"></ul>
+</div>
+
+
+  <script src="idb.min.js"></script>
+  <script src="gestion.js"></script>
+</body>
+</html>

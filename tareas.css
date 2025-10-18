@@ -1,0 +1,277 @@
+/* =============================
+   ESTILO MINIMALISTA OSCURO PARA TAREAS
+============================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+}
+
+body {
+  background-color: #0f0f0f;
+  color: #e6e6e6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* =============================
+   NAVBAR / MENÚ SUPERIOR
+============================= */
+.navbar {
+  width: 100%;
+  background-color: #111;
+  border-bottom: 1px solid #2a2a2a;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  padding: 14px 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* LOGO */
+.logo {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* ICONO DEL MENÚ (HAMBURGUESA) */
+.menu-icon {
+  display: none;
+  font-size: 1.6rem;
+  color: #fff;
+  cursor: pointer;
+  user-select: none;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+/* MENÚ NORMAL (ESCRITORIO) */
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 35px;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: #cfcfcf;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.menu li a:hover {
+  color: #ffffff;
+}
+
+/* MENÚ HAMBURGUESA (MÓVIL) */
+@media (max-width: 768px) {
+  .menu {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background-color: #111;
+    border-top: 1px solid #222;
+    display: none;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  #menu-toggle:checked + .menu-icon + .menu {
+    display: flex;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+}
+
+/* =============================
+   FORMULARIO CENTRAL
+============================= */
+.formulario {
+  margin: 140px auto 50px; /* espacio superior por el menú fijo */
+  max-width: 600px;
+  width: 90%;
+  background-color: #1b1b1b;
+  padding: 40px 50px;
+  border-radius: 14px;
+  border: 1px solid #2b2b2b;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.03);
+  text-align: center;
+}
+
+.formulario h1 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 25px;
+}
+
+/* =============================
+   INPUTS
+============================= */
+.formulario input[type="text"],
+.formulario input[type="date"] {
+  width: 100%;
+  padding: 12px 15px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #2b2b2b;
+  background-color: #121212;
+  color: #e6e6e6;
+  font-size: 1rem;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.formulario input:focus {
+  border: 1px solid #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.4);
+  outline: none;
+}
+
+/* =============================
+   BOTÓN AGREGAR
+============================= */
+#btnGuardar {
+  margin-top: 15px;
+  padding: 12px 30px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+#btnGuardar:hover {
+  background-color: #339dff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(0, 123, 255, 0.3);
+}
+
+/* =============================
+   LISTA DE TAREAS
+============================= */
+#listaTareas {
+  list-style: none;
+  margin-top: 25px;
+  padding: 0;
+}
+
+#listaTareas li {
+  background-color: #1c1c1c;
+  padding: 14px 18px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  border: 1px solid #2b2b2b;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.2s ease;
+}
+
+#listaTareas li:hover {
+  background-color: #222222;
+}
+
+#listaTareas li span {
+  word-break: break-word;
+  color: #e6e6e6;
+}
+
+/* BOTONES DE LISTA (editar/eliminar) */
+#listaTareas li button {
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 10px;
+  cursor: pointer;
+  margin-left: 5px;
+  transition: background 0.2s ease;
+}
+
+#listaTareas li button:hover {
+  background: #339dff;
+}
+
+/* =============================
+   RESPONSIVE
+============================= */
+@media (max-width: 768px) {
+  .formulario {
+    padding: 30px 25px;
+  }
+
+  .formulario h1 {
+    font-size: 1.5rem;
+  }
+
+  #listaTareas li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #listaTareas li button {
+    margin-top: 8px;
+    margin-left: 0;
+  }
+}
+
+
+
+
+
+
+
+/* Ajuste del formulario para separarlo del menú */
+.formulario {
+  margin: 140px auto 30px; /* antes podía ser 140px auto 50px */
+}
+
+/* Contenedor de la lista de tareas separado */
+.lista-container {
+  margin: 0 auto 50px;
+  max-width: 600px;
+  width: 90%;
+  background-color: #1c1c1c;
+  padding: 30px 40px;
+  border-radius: 14px;
+  border: 1px solid #2b2b2b;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.03);
+}
+
+/* Ajuste de UL dentro del contenedor */
+#listaTareas {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#listaTareas li {
+  background-color: #222;
+  padding: 14px 18px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  border: 1px solid #2b2b2b;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#listaTareas li div {
+  max-width: 70%;
+}
